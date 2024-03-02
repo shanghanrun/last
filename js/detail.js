@@ -1,51 +1,3 @@
-let username = "";
-  document.addEventListener('DOMContentLoaded', function() {
-  username = localStorage.getItem('userName');
-
-  const loginContainer = document.querySelector('.log-in-icon');
-  if (username !== null)  {
-        document.getElementById('userWelcomeMessage').textContent =` ${username} 님` ;
-        document.getElementById('login-signup').innerHTML =
-`<li><a href = "MyPage.html">
-      <img 
-      src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png" 
-      alt="MY Page">
-      <span>My Page</span>
-  </a>
-</li>`
-        userWelcomeMessage.style.cursor = 'default'; 
-        
-        
-    } else {  
-      document.getElementById('login-signup').innerHTML = `<li class="log-in-icon"><a href="Login.html">
-      <span class="logingone">
-      <img 
-      src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png" 
-      alt="로그인" class="login-img">
-      <span> Log in </span>
-      </span>
-  </a>
-</li>
-<li><a href = "SignUp.html">
-  <span class="signupgone"></span>
-  <img 
-  src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png" 
-  alt="회원가입">
-  <span>Sign up</span>
-   </a>
-</li>
-<li><a href = "MyPage.html">
-      <img 
-      src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png" 
-      alt="MY Page">
-      <span>My Page</span>
-  </a>
-</li>`;
-
-    }
-  } 
-);
-
 window.onload = function () {
   // 로그인 name이 없을 시 href
     // let user_name ="";
@@ -55,7 +7,6 @@ window.onload = function () {
     
     let movie1 = localStorage.getItem('movie1');
     let movie2 = localStorage.getItem('movie2');
-    let username = localStorage.getItem('userName');
 
   if(movie1 == null){
     console.log(movie2);
@@ -73,7 +24,7 @@ window.onload = function () {
     if (score > 10) {
         score = 10;
     } else {
-        score = (movie1.popularity / 100).toFixed(1).split('.')[0];
+        score = (movie1.popularity / 100).toFixed(1).split('.')[0];;
     }
     
     pop.innerText = `⭐ : ${score}`;
@@ -87,6 +38,9 @@ window.onload = function () {
 
     const video = document.querySelector('.video-frame')
     video.src = `https://www.youtube.com/embed/${movie1.youtube}`;
+
+
+    localStorage.clear();
   }else{
     console.log(movie1);
   
@@ -120,13 +74,11 @@ window.onload = function () {
 
     const video = document.querySelector('.video-frame')
     video.src = `https://www.youtube.com/embed/${movie1.youtube}`;
+
+    localStorage.clear();
   }
 }
 
-
-const time_html = () => {
-  location.href="time.html";
-}
 
 const sub = () => {
   let ta_input = document.getElementById('textarea-input').value;
@@ -135,8 +87,6 @@ const sub = () => {
     <div <div class="review-content p-5 mb-3 rounded">${ta_input}</div>
       </div>`;
 }
-
-
 
 
  let modal = document.getElementById("myModal");
@@ -156,5 +106,3 @@ const sub = () => {
      modal.style.display = "none";
    }
  }
-
-
