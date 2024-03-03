@@ -1,53 +1,57 @@
-/* 메인페이지 css 현준,동현,병권님  이름 밑에가 각 css입니다.*/ 
-body{
+/* 메인페이지 css 현준,동현,병권님  이름 밑에가 각 css입니다.*/
+body {
     font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
 }
 
-.Logo{
+.Logo {
     width: 180px;
     margin-top: 20px;
     margin-left: 8em;
 }
 
-.nav-link{
+.nav-link {
     width: 80px;
     height: 24px;
     font-size: 15px;
     font-weight: bold;
 }
 
-.nav-item{
+.nav-item {
     width: 100px;
 }
 
-.nav-item:hover{
+.nav-item:hover {
     background-color: darkgoldenrod;
     font-weight: bolder;
     border: none;
-    border-radius:0.5rem;
+    border-radius: 0.5rem;
 }
 
-.표시순서:hover, .최신순:hover, .인기순:hover,
-.랜덤:hover,.korea:hover, .us:hover{
+.표시순서:hover,
+.최신순:hover,
+.인기순:hover,
+.랜덤:hover,
+.korea:hover,
+.us:hover {
     font-weight: bold;
     background-color: lightgray;
 }
 
 #navbar.scrolled {
     background-color: white;
-  }
+}
 
 
 /* 채연 -병권님+동현님  css 합치는 것 정리  */
 
 .container-fluid {
-    background-color: rgb(255,181,43);
+    background-color: rgb(255, 181, 43);
     padding: 10px;
 
 }
 
-.newsnav{  
-    background-color: rgb(255,181,43);
+.newsnav {
+    background-color: rgb(255, 181, 43);
     padding: 20px;
     margin-top: 10px;
     margin-bottom: 15px;
@@ -66,14 +70,16 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
-    
+
     /* justify-content: flex-end; */
     /* padding-left: 14rem; */
 }
 
 .search-input {
-    flex-grow: 1; /* 입력란이 가능한 최대 너비를 가질 수 있도록 설정합니다. */
-    min-width: 0; /* 최소 너비를 0으로 설정하여 입력란이 가로로 최대한 늘어날 수 있도록 합니다. */
+    flex-grow: 1;
+    /* 입력란이 가능한 최대 너비를 가질 수 있도록 설정합니다. */
+    min-width: 0;
+    /* 최소 너비를 0으로 설정하여 입력란이 가로로 최대한 늘어날 수 있도록 합니다. */
     /* margin-left: 600px; */
     border-style: none;
     background-color: #fff6d8;
@@ -83,37 +89,60 @@ body{
     width: 12.5rem;
     font-size: 14px;
     font-weight: bold;
-    
+
+}
+
+.container {
+    position: relative;
+    width: 100vw;
 }
 
 .slide-body {
-    width: 1200px;
+    border: 14px dashed rgb(41, 41, 60);
+    border-left: 14px solid rgb(41, 41, 60);
+    border-right: 14px solid rgb(41, 41, 60);
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.poster-body {
+    /*border: 14px dashed rgb(41, 41, 60);
+    border-left: 14px solid rgb(41, 41, 60);
+    border-right: 14px solid rgb(41, 41, 60);
+    border-radius: 10px;*/
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .movie1 {
-    height: 470px;
+    height: 300px;
     margin-left: 0;
     position: relative;
     display: flex;
     justify-content: start;
-    transition: transform 0.8s ease;
+    transition: transform 0.5s ease;
 }
 
-
 .slide-image {
-    margin-top: 70px;
-    width: 70%;
+    margin-top: 0px;
+    width: 90%;
     height: 300px;
     border-radius: 10px;
-    transition: transform 0.4s;
-    box-shadow: 2px 1px 10px 2px rgba(0, 0, 0, 0.4);
+    transition: transform 0.8s;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.5);
 }
 
 .slide-image:hover {
-    transform: scale(1.4);
-    box-shadow: 0 2 10px 20px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+    box-shadow: 1px 1px 20px 4px rgba(253, 73, 214, 0.6);
 }
 
 input {
@@ -125,9 +154,9 @@ input {
 .nav-item {
     font-weight: bold;
     padding-left: 30px;
-   padding: 0 10px;
-   
-   
+    padding: 0 10px;
+
+
 
 }
 
@@ -144,10 +173,11 @@ input {
 } */
 
 .movie2 {
-    width: 45vw;
+    width: 100%;
     display: flex;
     justify-content: center;
-    gap: 4em;
+    flex-wrap: wrap;
+    gap: 1%;
 }
 
 img {
@@ -170,17 +200,19 @@ img {
     height: 100%;
     transition: 0.5s ease-in-out;
     transform-style: preserve-3d;
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
 }
 
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
+    border-radius: 10px;
 }
 
 .flip-card-front {
     z-index: 2;
     border-radius: 10px;
+    background: #fff;
 }
 
 .flip-card-back {
@@ -222,8 +254,8 @@ h4 {
     padding: 5px;
     text-decoration: none;
     text-transform: uppercase;
-    transition: 0.3s;   
-    
+    transition: 0.3s;
+
 
 }
 
@@ -232,14 +264,16 @@ h4 {
 }
 
 #img1 {
-    width: 99.8%;
-    height: 99.8%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    transform: all 0.8s;
 }
 
 #img2 {
     width: 99.8%;
-    height: 160px;
+    height: 41%;
+    transform: all 0.8s;
 }
 
 
@@ -255,16 +289,16 @@ h4 {
 .navbar-container {
     font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
     font-size: 100%;
-   
+
 }
 
-.topNav{
-     float: right;
-     padding: 20px;
+.topNav {
+    float: right;
+    padding: 20px;
     padding-top: 20px;
 }
 
-    
+
 .topNavbar {
     display: flex;
     justify-content: space-between;
@@ -273,13 +307,14 @@ h4 {
 
 .topNav li img {
     width: 30px;
-    margin-right: 30px; /* 아이콘과 텍스트 사이의 간격을 조정합니다. */
+    margin-right: 30px;
+    /* 아이콘과 텍스트 사이의 간격을 조정합니다. */
     margin-left: 10px;
 }
 
 .topNav li span {
-    padding:0 15 0 0px;
-    
+    padding: 0 15 0 0px;
+
 }
 
 .LogoStyle {
@@ -296,7 +331,8 @@ h4 {
 
 .topNav li {
     display: flex;
-    align-items: center; /* 아이콘과 텍스트를 수직 가운데 정렬합니다. */
+    align-items: center;
+    /* 아이콘과 텍스트를 수직 가운데 정렬합니다. */
     padding: 1rem;
 }
 
@@ -305,14 +341,14 @@ h4 {
     height: 30px;
 }
 
-li a{
+li a {
     text-decoration: none;
     color: black;
 }
 
 .footer-container {
     width: 100%;
-    
+
     font-size: 100%;
     margin: 0 auto;
     padding: 0;
@@ -342,7 +378,7 @@ li a{
 
 
 /* 새로운 CSS 코드 추가 */
-.container{
+.container {
     position: relative;
 }
 
@@ -356,21 +392,26 @@ li a{
 
 
 .card:hover {
-    transform: scale(1.15); /* 호버 시에 카드를 약간 확대합니다. */
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 25px; /* 그림자를 더 크게 만듭니다. */
-    z-index: 1; /* 다른 요소 위에 나타나도록 설정합니다. */
+    transform: scale(1.15);
+    /* 호버 시에 카드를 약간 확대합니다. */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 25px;
+    /* 그림자를 더 크게 만듭니다. */
+    z-index: 1;
+    /* 다른 요소 위에 나타나도록 설정합니다. */
 }
 
 .card-img-top {
     width: 100%;
-    height: 200px; /* 모든 이미지의 높이를 200px로 고정합니다. */
+    height: 200px;
+    /* 모든 이미지의 높이를 200px로 고정합니다. */
     object-fit: cover;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .card-title {
-    font-size: 15px; /* 타이틀의 폰트 크기를 16px로 설정합니다. */
+    font-size: 15px;
+    /* 타이틀의 폰트 크기를 16px로 설정합니다. */
     width: 100%;
     height: 80px;
 
@@ -397,14 +438,16 @@ li a{
     border-style: none;
     color: black;
 }
-.btn:hover{
+
+.btn:hover {
     border: 1px solid darkgoldenrod;
-    background-color: darkgoldenrod ;
+    background-color: darkgoldenrod;
     border-radius: 0.5rem;
 }
 
 .col-md-2:nth-child(n+7) {
-    display: none; /* 7번째부터 숨김 */
+    display: none;
+    /* 7번째부터 숨김 */
 }
 
 #sliderControls {
@@ -412,19 +455,23 @@ li a{
     left: 0;
     right: 0;
     bottom: 10em;
-    display: flex; /* 버튼을 가로로 나란히 배치하기 위해 Flexbox를 사용합니다. */
-    justify-content: space-between; /* 버튼 사이의 간격을 최대한 벌립니다. */
+    display: flex;
+    /* 버튼을 가로로 나란히 배치하기 위해 Flexbox를 사용합니다. */
+    justify-content: space-between;
+    /* 버튼 사이의 간격을 최대한 벌립니다. */
     width: 100%;
 }
 
 #prevBtn {
     position: relative;
-    right: 30px; /* 왼쪽으로 10px 이동 */
+    right: 30px;
+    /* 왼쪽으로 10px 이동 */
 }
 
 #nextBtn {
     position: relative;
-    left: 30px; /* 오른쪽으로 10px 이동 */
+    left: 30px;
+    /* 오른쪽으로 10px 이동 */
 }
 
 
@@ -438,81 +485,101 @@ li a{
     font-size: 40px;
     width: 40px;
     height: 40px;
-    display: flex; /* 요소를 플렉스 박스로 설정하여 내부 요소를 가운데 정렬합니다. */
-    justify-content: center; /* 수평 가운데 정렬 */
-    align-items: center; /* 수직 가운데 정렬 */
+    display: flex;
+    /* 요소를 플렉스 박스로 설정하여 내부 요소를 가운데 정렬합니다. */
+    justify-content: center;
+    /* 수평 가운데 정렬 */
+    align-items: center;
+    /* 수직 가운데 정렬 */
     position: relative;
     z-index: 9999;
     opacity: 0.6;
     font-weight: bold;
     padding: 0px;
 }
+
 #prevBtn::before,
 #nextBtn::before {
-    content: ''; /* 가상 요소를 추가하여 버튼 내부에 아이콘을 대신합니다. */
+    content: '';
+    /* 가상 요소를 추가하여 버튼 내부에 아이콘을 대신합니다. */
     position: absolute;
-    top: 50%; /* 부모 요소의 상단 기준으로 수직 가운데 정렬 */
-    left: 50%; /* 부모 요소의 왼쪽 기준으로 수평 가운데 정렬 */
-    transform: translate(-50%, -55%); /* 수직과 수평 가운데 정렬 */
-    font-size: 24px; /* 아이콘 크기 조정 */
+    top: 50%;
+    /* 부모 요소의 상단 기준으로 수직 가운데 정렬 */
+    left: 50%;
+    /* 부모 요소의 왼쪽 기준으로 수평 가운데 정렬 */
+    transform: translate(-50%, -55%);
+    /* 수직과 수평 가운데 정렬 */
+    font-size: 24px;
+    /* 아이콘 크기 조정 */
 }
 
 
 #prevBtn::before {
-    content: '<'; /* 왼쪽 화살표 표시 */
+    content: '<';
+    /* 왼쪽 화살표 표시 */
     font-size: 40px;
 }
 
 #nextBtn::before {
-    content: '>'; /* 오른쪽 화살표 표시 */
+    content: '>';
+    /* 오른쪽 화살표 표시 */
     font-size: 40px;
 }
 
 
 
 #prevBtn:hover,
-#nextBtn:hover{
+#nextBtn:hover {
     background-color: lightgrey;
 
 }
 
 
 #prevBtn {
-    margin-right: auto; /* 왼쪽에 붙이도록 설정합니다. */
+    margin-right: auto;
+    /* 왼쪽에 붙이도록 설정합니다. */
 }
 
 #nextBtn {
-    margin-left: auto; /* 오른쪽에 붙이도록 설정합니다. */
+    margin-left: auto;
+    /* 오른쪽에 붙이도록 설정합니다. */
 }
 
 /* 992px 이하에서는 3번째부터 숨깁니다. */
 @media (max-width: 1399px) {
     .card {
-        overflow-wrap: break-word; /* 텍스트가 요소의 경계를 넘어갈 때 줄 바꿈 처리 */
-        height: auto 
+        overflow-wrap: break-word;
+        /* 텍스트가 요소의 경계를 넘어갈 때 줄 바꿈 처리 */
+        height: auto
     }
+
     .card-title {
         overflow: hidden;
-        white-space: normal; /* 텍스트 자동 줄바꿈 허용 */
-        text-overflow: ellipsis; /* 넘치는 텍스트에 ... 표시 */
+        white-space: normal;
+        /* 텍스트 자동 줄바꿈 허용 */
+        text-overflow: ellipsis;
+        /* 넘치는 텍스트에 ... 표시 */
     }
-    
+
 }
 
 @media (max-width: 1199px) {
     .card-title {
         overflow: hidden;
-        white-space: normal; /* 텍스트 자동 줄바꿈 허용 */
-        text-overflow: ellipsis; /* 넘치는 텍스트에 ... 표시 */
+        white-space: normal;
+        /* 텍스트 자동 줄바꿈 허용 */
+        text-overflow: ellipsis;
+        /* 넘치는 텍스트에 ... 표시 */
     }
 }
 
 
 @media (max-width: 992px) {
-    .card{
+    .card {
         width: 130px;
-        height: auto; 
+        height: auto;
     }
+
     .col-md-2:nth-child(n+6) {
         display: none;
     }
@@ -521,60 +588,62 @@ li a{
 
 /* 768px 이하에서는 2번째부터 숨깁니다. */
 @media (max-width: 768px) {
-    .card{
+    .card {
         width: 130px;
-        height: auto; 
+        height: auto;
     }
+
     .col-md-2:nth-child(n+5) {
         display: none;
     }
 }
 
 
-    .user-welcome {
-        
-        font-size: 18px;
-        font-family:Arial, Helvetica, sans-serif;
-        white-space: nowrap; /* 한 줄로 표시되도록 설정 */
-        overflow: hidden; 
-    
-    }
-    
+.user-welcome {
 
-    .footer-container {
-        width: 100%;
-        font-size: 100%;
-        margin: 0 auto;
-        padding: 0;
-        border: 0;
-        background-color: black;
-        color: azure;
-        font-size: small;
-    }
-    
-    .footerbar-list {
-        width: 60%;
-        max-width: 980px;
-        display: flex;
-        justify-content: space-between;
-        list-style: none;
-        border-bottom: 2px dashed aliceblue;
-        padding-bottom: 1rem;
-        margin: auto;
-        letter-spacing: 3px;
-    
-    }
-    
-    .footerP {
-        width: 60%;
-        margin-left: 3rem;
-        padding-bottom: 1rem;
-        margin: auto;
-        letter-spacing: 3px;
-    
-    }
-    
-    /* 768px 미만일 때 스타일 조정 /
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    /* 한 줄로 표시되도록 설정 */
+    overflow: hidden;
+
+}
+
+
+.footer-container {
+    width: 100%;
+    font-size: 100%;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    background-color: black;
+    color: azure;
+    font-size: small;
+}
+
+.footerbar-list {
+    width: 60%;
+    max-width: 980px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    border-bottom: 2px dashed aliceblue;
+    padding-bottom: 1rem;
+    margin: auto;
+    letter-spacing: 3px;
+
+}
+
+.footerP {
+    width: 60%;
+    margin-left: 3rem;
+    padding-bottom: 1rem;
+    margin: auto;
+    letter-spacing: 3px;
+
+}
+
+/* 768px 미만일 때 스타일 조정 /
     @media (max-width: 768px) {
         .footerbar-list {
             width: 90%; / 전체 너비의 90%로 축소 /
@@ -594,8 +663,26 @@ li a{
 
 
 
-            /* header list */
-            .login-signup{
-                display: flex;
-                list-style-type: none; /* 리스트 스타일 제거 */
-            }
+/* header list */
+.login-signup {
+    display: flex;
+    list-style-type: none;
+    /* 리스트 스타일 제거 */
+}
+
+h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 24px;
+}
+
+p {
+    margin-top: 10px;
+    border-top: 2px solid rgb(149, 166, 226);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 10px;
+    font-size: 18px;
+}

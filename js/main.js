@@ -4406,7 +4406,7 @@ function makeSlide(){
   const container = document.querySelector('.movie1');
   const dataLength = movie1List.length;
   const imagesPerPage = 5;
-  const imgWidthPercentage = 100 / imagesPerPage; // 각 이미지의 너비를 설정합니다.
+  const imgWidthPercentage = 100 / imagesPerPage-2; // 각 이미지의 너비를 설정합니다.
   const containerWidthPercentage = imgWidthPercentage * dataLength; // 컨테이너의 너비를 설정합니다.
 
   container.style.width = `${containerWidthPercentage}vw`; // 컨테이너의 너비를 설정합니다.
@@ -4435,11 +4435,80 @@ function makeSlide(){
           };
           data = JSON.stringify(data);
           localStorage.setItem('movie1', data);
-          window.location.href ='detailpage.html';
+          img.style.transform = 'scale(8)';
+              setInterval(() => {
+                window.location.href ='detail.html';
+              }, 300);
       });
 
       container.appendChild(inner);
   }
+  const btnContainer2 = document.createElement('div')
+        btnContainer2.style.position = 'absolute';
+        btnContainer2.style.top = '12%'
+        btnContainer2.style.transform = 'translateY(-50%)'
+        btnContainer2.style.display = 'flex'
+        btnContainer2.style.justifyContent = 'space-evenly'
+        btnContainer2.style.width = '100%'
+        btnContainer2.style.paddingLeft = '20px'
+        // btnContainer2.style.boxSizing = 'border-box'
+
+
+        const btnPrev = document.createElement('button')
+        const btnNext = document.createElement('button')
+        btnPrev.innerText = '<'
+        btnNext.innerText = '>'
+        btnPrev.style.backgroundColor = 'rgba(254, 173, 250, 0.7)'
+        btnPrev.style.border = 'none'
+        btnPrev.style.padding = '10px 20px'
+        btnPrev.style.cursor = 'pointer'
+        btnPrev.style.fontSize = '30px'
+        btnPrev.style.fontWeight = 'bold'
+        btnPrev.style.color = '#333131'
+
+        btnNext.style.backgroundColor = 'rgba(254, 173, 250, 0.7)'
+        btnNext.style.border = 'none'
+        btnNext.style.padding = '10px 20px'
+        btnNext.style.cursor = 'pointer'
+        btnNext.style.fontSize = '30px'
+        btnNext.style.fontWeight = 'bold'
+        btnNext.style.color = '#333131'
+
+        const length = Math.ceil(dataLength / imagesPerPage);
+        let index = 0;
+        let move = ''
+        btnPrev.classList.add('disabled')
+        btnPrev.addEventListener('click', function () {
+            btnNext.classList.remove('disabled');
+            if (index == 0){
+              btnPrev.classList.add('disabled');
+            }
+            if (index > 0) {
+              btnPrev.classList.remove('disabled');
+                index--
+                const scale = (index * 100).toString()
+                move = `translate(-${scale}vw)`
+            }
+            container.style.transform = move;
+        })
+        btnNext.addEventListener('click', function () {
+            console.log('index: ', index)
+            btnPrev.classList.remove('disabled');
+            if(index == length -2){
+              btnNext.classList.add('disabled');
+            }
+            if (index < length - 2) {
+              btnNext.classList.remove('disabled');
+                index++
+                const scale = (index * 100).toString()
+                move = `translate(-${scale}vw)`
+            }
+            container.style.transform = move;
+        })
+
+        btnContainer2.appendChild(btnPrev)
+        btnContainer2.appendChild(btnNext)
+        body.appendChild(btnContainer2)
   
 }
 
