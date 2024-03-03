@@ -147,7 +147,7 @@ input {
     width: 45vw;
     display: flex;
     justify-content: center;
-    
+    gap: 4em;
 }
 
 img {
